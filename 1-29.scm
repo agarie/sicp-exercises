@@ -10,11 +10,14 @@
 (define (cube x) (* x x x))
 
 (define (simpson f a b n)
+  (define (constant k)
+    (cond ((or (= k 0) (= k n)) 1)
+          ((even? k) 2)
+          (else 4)))
   (define (simpson-term h k)
-    (cond ((= k 0) (+ (* (/ h 3) (f a)) (simpson-term h (+ k 1))))
-          ((= k n) (* (/ h 3) (f b)))
-          ((even? k) (+ (* (/ h 3) (* 2 (f (+ a (* k h))))) (simpson-term h (+ k 1))))
-          (else (+ (* (/ h 3) (* 4 (f (+ a (* k h))))) (simpson-term h (+ k 1))))))
+    (if (> k n)
+      0
+      (+ (* (/ h 3) (constant k) (f (+ a (* k h)))) (simpson-term h (+ k 1)))))
   (simpson-term (/ (- b a) n) 0))
 
 (simpson cube 0 1 100)

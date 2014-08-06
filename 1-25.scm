@@ -1,8 +1,6 @@
 (define (divides? a b)
   (= (remainder b a) 0))
 
-(define (square x) (* x x))
-
 (define (expmod base exp m)
   (cond ((= exp 0) 1)
         ((even? exp)

@@ -2,8 +2,6 @@
 (define (divides? a b)
   (= (remainder b a) 0))
 
-(define (square x) (* x x))
-
 ; Exercise 1-23 is about using a better find-divisor procedure.
 (define (next n)
   (if (= n 2) 3
