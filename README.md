@@ -1,1 +1,9 @@
 This repository contains my answers to the exercises from Structure and Interpretation of Computer Programs, 2nd edition.
+
+## What I did so far
+
+- Chapter 1: completed.
+- Chapter 2: 2-11, 2-13.
+- Chapter 3: ...
+- Chapter 4: ...
+- Chapter 5: ...
