@@ -1,0 +1,15 @@
+(define (same-parity first . rest)
+  (define (parity v)
+    (or (and (even? first) (even? v))
+        (and (odd? first) (odd? v))))
+  (define (same-parity-rec xs)
+    (if (null? xs)
+      '()
+      (if (parity (car xs))
+        (cons (car xs) (same-parity-acc (cdr xs)))
+        (same-parity-acc (cdr xs)))))
+  (same-parity-acc rest))
+
+; Tests.
+(same-parity 1 2 3 4 5 6 7)
+(same-parity 2 3 4 5 6 7 8)
