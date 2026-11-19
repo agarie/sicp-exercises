@@ -1,3 +1,8 @@
+#lang racket
+
+(displayln "Exercise 1-07")
+(displayln "")
+
 (define (average x y)
   (/ (+ x y) 2))
 
